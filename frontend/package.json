@@ -1,0 +1,53 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "@lottiefiles/react-lottie-player": "^3.5.4",
+    "@mantine/core": "^7.12.0",
+    "@mantine/hooks": "^7.12.0",
+    "@mantinex/mantine-logo": "^1.0.1",
+    "@mui/material": "^6.1.5",
+    "@mui/x-data-grid": "^7.22.0",
+    "@tabler/icons-react": "^3.12.0",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "dayjs": "^1.11.13",
+    "jsonwebtoken": "^9.0.2",
+    "lottie-react": "^2.4.0",
+    "mongodb": "^6.8.0",
+    "next": "^14.2.12",
+    "next-auth": "^4.24.8",
+    "plotly.js": "^2.35.2",
+    "plotly.js-dist": "^2.35.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-plotly.js": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/mongodb": "^4.0.6",
+    "@types/node": "20.14.8",
+    "@types/plotly.js": "^2.33.5",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@types/react-plotly.js": "^2.6.3",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8.4.38",
+    "postcss-preset-mantine": "1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "typescript": "5.5.2"
+  },
+  "packageManager": "yarn@4.4.0"
+}

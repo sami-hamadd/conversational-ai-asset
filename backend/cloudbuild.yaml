@@ -1,0 +1,36 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    dir: "backend"
+    entrypoint: bash
+    args:
+      - "-c"
+      - |
+        branch_name=$BRANCH_NAME
+        branch=${branch_name//\//-}
+        docker build -t ${_ARTIFACT_REGISTRY_CONTAINERS_URL}/backend-service:latest -t ${_ARTIFACT_REGISTRY_CONTAINERS_URL}/backend-service:$SHORT_SHA -t ${_ARTIFACT_REGISTRY_CONTAINERS_URL}/backend-service:$branch --network=cloudbuild .
+
+  - name: 'gcr.io/cloud-builders/docker'
+    dir: "backend"
+    entrypoint: docker
+    args: [
+      "push",
+      "-a",
+      "${_ARTIFACT_REGISTRY_CONTAINERS_URL}/backend-service",
+    ]
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    dir: "backend"
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - "backend-service"
+      - --image=${_ARTIFACT_REGISTRY_CONTAINERS_URL}/backend-service:${SHORT_SHA}
+      - --region=${_REGION}
+      - --project=$PROJECT_ID
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8000
+
+options:
+  logging: CLOUD_LOGGING_ONLY
