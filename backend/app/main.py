@@ -24,7 +24,11 @@ app.add_middleware(
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
 )
-load_dotenv()
+
+# The following line should be commented in production!
+load_dotenv() # Comment this line if you don't want to read the environment variables from a .env file!
+
+
 # Register routes
 app.include_router(auth_router, tags=["Auth"])
 app.include_router(conversations_router, tags=["Conversations"])
