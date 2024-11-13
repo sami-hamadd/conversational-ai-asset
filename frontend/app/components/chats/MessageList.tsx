@@ -13,10 +13,8 @@ import {
 } from "@tabler/icons-react";
 import { useClipboard } from "@mantine/hooks";
 import { useSession } from "next-auth/react";
-import {
-  callTextToSpeechApi,
-  updateMessageFeedback,
-} from "@/api/conversations/api";
+import { updateMessageFeedback } from "@/api/messages/api";
+import { callTextToSpeechApi } from "@/api/genai/api";
 
 interface MessageListProps {
   messages: Message[];

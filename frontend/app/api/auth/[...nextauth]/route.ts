@@ -16,7 +16,7 @@ const authOptions: NextAuthOptions = {
         try {
           // Make the request backend to validate the credentials
           const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
-          const res = await axios.post(`${apiUrl}/token/`, new URLSearchParams({
+          const res = await axios.post(`${apiUrl}/api/v1/auth/token/`, new URLSearchParams({
 
             username: credentials?.username || "",
             password: credentials?.password || "",

@@ -6,8 +6,8 @@ import MessageInput from '@/components/chats/MessageInput';
 import MessageList from '@/components/chats/MessageList';
 import ChatEmptyState from '@/components/chats/ChatEmptyState';
 import { useSessionCheck } from '@/hooks/useSessionCheck';
-import { getMessages } from '@/api/conversations/api';
 import NotFound from '@/not-found';
+import { getMessages } from '@/api/messages/api';
 
 interface Question {
     type: 'TEXT' | 'AUDIO';

@@ -3,7 +3,7 @@ import { Textarea, Group, ActionIcon, rem } from '@mantine/core';
 import { IconArrowUp, IconMicrophone } from '@tabler/icons-react';
 import { theme } from 'theme';
 import classes from '@/components/chats/disabled_sendbtn.module.css'
-import { getMessages, sendMessageAudio, sendMessageText } from '@/api/conversations/api';
+import { getMessages, sendMessageAudio, sendMessageText } from '@/api/messages/api';
 
 interface MessageInputProps {
     conversationId: string;
